@@ -5,22 +5,22 @@ import java.util.List;
 public class Direction {
 
     private char direction;
-    List<Character> directionList = List.of('N', 'E', 'S', 'W');
+    private final List<Character> directionList = List.of('N', 'E', 'S', 'W');
+
+    public Direction(char direction) {
+        this.direction = direction;
+    }
 
     public char getDirection() {
         return direction;
     }
 
-    public void setDirection(char direction) {
+    private void setDirection(char direction) {
         this.direction = direction;
     }
 
-    public int getDirectionIndex(char direction) {
+    private int getDirectionIndex(char direction) {
         return directionList.indexOf(direction);
-    }
-
-    public Direction(char direction) {
-        this.direction = direction;
     }
 
     public void turnLeft() {
