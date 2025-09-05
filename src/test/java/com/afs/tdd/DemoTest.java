@@ -168,4 +168,19 @@ class DemoTest {
         Location expectedLocation = new Location(0, 0, new Direction('W'));
         assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
     }
+
+    @Test
+    void should_update_direction_to_N_when_executeCommand_given_R_and_direction_is_W() {
+        //Given
+        Direction direction = new Direction('W');
+        Location location = new Location(0, 0, direction);
+        MarsRover marsRover = new MarsRover(location);
+
+        //When
+        marsRover.executeCommand('R');
+
+        //Then
+        Location expectedLocation = new Location(0, 0, new Direction('N'));
+        assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
+    }
 }
