@@ -10,10 +10,6 @@ public class MarsRover {
         return location;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     public MarsRover(Location location) {
         this.location = location;
     }
@@ -30,10 +26,5 @@ public class MarsRover {
             case 'R': location.turnRight(); break;
         }
     }
-
-    public String reportLocation() {
-        return String.format("%d:%d:%s", getLocation().getCoordinateX(), getLocation().getCoordinateY(), getLocation().getDirection());
-    }
-
 
 }
