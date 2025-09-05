@@ -93,4 +93,19 @@ class DemoTest {
         Location expectedLocation = new Location(0, 0, new Direction('S'));
         assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
     }
+
+    @Test
+    void should_move_when_executeCommand_given_L_and_direction_is_S() {
+        //Given
+        Direction direction = new Direction('S');
+        Location location = new Location(0, 0, direction);
+        MarsRover marsRover = new MarsRover(location);
+
+        //When
+        marsRover.executeCommand('L');
+
+        //Then
+        Location expectedLocation = new Location(0, 0, new Direction('E'));
+        assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
+    }
 }
