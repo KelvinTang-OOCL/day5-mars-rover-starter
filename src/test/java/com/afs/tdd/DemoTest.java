@@ -199,5 +199,20 @@ class DemoTest {
         assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
     }
 
+    @Test
+    void should_decrease_coordinateX_when_executeCommand_given_B_and_direction_is_E() {
+        //Given
+        Direction direction = new Direction('E');
+        Location location = new Location(0, 0, direction);
+        MarsRover marsRover = new MarsRover(location);
+
+        //When
+        marsRover.executeCommand('B');
+
+        //Then
+        Location expectedLocation = new Location(-1, 0, direction);
+        assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
+    }
+
 
 }
