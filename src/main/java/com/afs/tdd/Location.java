@@ -11,8 +11,8 @@ public class Location {
     private final Map<Character, List<Integer>> moveDirectionInCoordinate =
             Map.of('N', List.of(0,1),
                     'E', List.of(1,0),
-                    'W', List.of(0,-1),
-                    'S', List.of(-1,0));
+                    'S', List.of(0,-1),
+                    'W', List.of(-1,0));
 
     public Location(int coordinateX, int coordinateY, Direction direction) {
         this.coordinateX = coordinateX;
