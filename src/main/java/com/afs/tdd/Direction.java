@@ -24,10 +24,10 @@ public class Direction {
     }
 
     public void turnLeft() {
-        setDirection(directionList.get(Math.abs(getDirectionIndex(direction)+1)%directionList.size()));
+        setDirection(directionList.get(Math.abs(getDirectionIndex(direction)-1)%directionList.size()));
     }
 
     public void turnRight() {
-        setDirection(directionList.get(Math.abs(getDirectionIndex(direction)-1)%directionList.size()));
+        setDirection(directionList.get(Math.abs(getDirectionIndex(direction)+1)%directionList.size()));
     }
 }
