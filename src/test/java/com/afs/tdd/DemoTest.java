@@ -1,6 +1,9 @@
 package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
@@ -238,6 +241,21 @@ class DemoTest {
 
         //When
         marsRover.executeCommand('B');
+
+        //Then
+        Location expectedLocation = new Location(1, 0, direction);
+        assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
+    }
+
+    @Test
+    void should_increase_coordinateX_when_executeCommands_given_L_and_B_and_direction_is_N() {
+        //Given
+        Direction direction = new Direction('N');
+        Location location = new Location(0, 0, direction);
+        MarsRover marsRover = new MarsRover(location);
+
+        //When
+        marsRover.executeCommands(List.of('L', 'B'));
 
         //Then
         Location expectedLocation = new Location(1, 0, direction);
