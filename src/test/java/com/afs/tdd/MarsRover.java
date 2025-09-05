@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MarsRover {
 
-    private Location location;
+    private final Location location;
 
     public Location getLocation() {
         return location;
