@@ -6,13 +6,13 @@ import java.util.Map;
 public class Location {
     private int coordinateX;
     private int coordinateY;
-    private Direction direction;
+    private final Direction direction;
     private final int moveDistance = 1;
     private final Map<Character, List<Integer>> moveDirectionInCoordinate =
-            Map.of('N', List.of(0,1),
-                    'E', List.of(1,0),
-                    'S', List.of(0,-1),
-                    'W', List.of(-1,0));
+            Map.of('N', List.of(0,moveDistance),
+                    'E', List.of(moveDistance,0),
+                    'S', List.of(0,moveDistance*-1),
+                    'W', List.of(moveDistance*-1,0));
 
     public Location(int coordinateX, int coordinateY, Direction direction) {
         this.coordinateX = coordinateX;
@@ -20,28 +20,12 @@ public class Location {
         this.direction = direction;
     }
 
-    public int getCoordinateX() {
-        return coordinateX;
-    }
-
     private void setCoordinateX(int coordinateX) {
         this.coordinateX = coordinateX;
     }
 
-    public int getCoordinateY() {
-        return coordinateY;
-    }
-
     private void setCoordinateY(int coordinateY) {
         this.coordinateY = coordinateY;
-    }
-
-    public Direction getDirection() {
-        return direction;
-    }
-
-    private void setDirection(Direction direction) {
-        this.direction = direction;
     }
 
     public String toString() {
