@@ -44,6 +44,10 @@ public class Location {
         this.direction = direction;
     }
 
+    public String toString() {
+        return String.format("%d:%d:%s", coordinateX, coordinateY, direction.getDirection());
+    }
+
     public void turnLeft() {
         direction.turnLeft();
     }
