@@ -16,6 +16,6 @@ class DemoTest {
 
         //Then
         Location expectedLocation = new Location(0, 1, direction);
-        assertEquals(expectedLocation, marsRover.getLocation());
+        assertEquals(expectedLocation.toString(), marsRover.getLocation().toString());
     }
 }
